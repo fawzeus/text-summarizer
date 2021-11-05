@@ -6,9 +6,11 @@ from fastapi.templating import Jinja2Templates
 from fastapi.responses import FileResponse
 from starlette.responses import StreamingResponse
 import io
+import spacy
 
 
 app = FastAPI()
+nlp = spacy.load('en')
 """
 templates=Jinja2Templates(directory="templates")
 app.mount("/static", StaticFiles(directory="static"), name="static")
@@ -20,4 +22,4 @@ def read_root(request:Request):
 """
 @app.post("/")
 async def root(text):
-    return "hello world"
+    docx = nlp(text)
