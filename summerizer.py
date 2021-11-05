@@ -9,7 +9,6 @@ stopwords = list(STOP_WORDS)
 
 # calculate Word Frequency
 def calculate_word_frequency(docx):
-    nlp = spacy.load('en')
     word_frequencies = {}
     for word in docx:
         if word.text not in stopwords:
@@ -41,7 +40,8 @@ def calculate_sentences_score(docx,word_frequencies):
 
 
 def summerize(sentence_scores):
-    summarized_sentences = nlargest(7, sentence_scores, key=sentence_scores.get)
+    select_length=int(len(sentence_scores.keys())*0.7)
+    summarized_sentences = nlargest(select_length, sentence_scores, key=sentence_scores.get)
     final_sentences = [ w.text for w in summarized_sentences ]
     summary = ' '.join(final_sentences)
     return summary

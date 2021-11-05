@@ -7,10 +7,11 @@ from fastapi.responses import FileResponse
 from starlette.responses import StreamingResponse
 import io
 import spacy
+from summerizer import calculate_sentences_score,calculate_word_frequency,summerize,normalize
 
 
 app = FastAPI()
-nlp = spacy.load('en')
+nlp = spacy.load("en_core_web_sm")
 """
 templates=Jinja2Templates(directory="templates")
 app.mount("/static", StaticFiles(directory="static"), name="static")
@@ -22,4 +23,9 @@ def read_root(request:Request):
 """
 @app.post("/")
 async def root(text):
-    docx = nlp(text)
+    nlp=spacy.load("en_core_web_sm")
+    docx=nlp(text)
+    words_freaquency=calculate_word_frequency(docx)
+    normalize(words_freaquency)
+    sentences_score=calculate_sentences_score(docx,words_freaquency)
+    return(summerize(sentences_score))
