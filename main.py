@@ -12,7 +12,7 @@ from summerizer import calculate_sentences_score,calculate_word_frequency,summer
 
 app = FastAPI()
 nlp = spacy.load("en_core_web_sm")
-"""
+
 templates=Jinja2Templates(directory="templates")
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
@@ -20,7 +20,6 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 def read_root(request:Request):
     return templates.TemplateResponse("home.html",{"request":request})
 
-"""
 @app.post("/")
 async def root(text):
     nlp=spacy.load("en_core_web_sm")

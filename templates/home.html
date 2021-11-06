@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Summarizer</title>
+  <link
+      href="{{ url_for('static', path='../static/styles.css') }}"
+      rel="stylesheet"
+    />
+</head>
+<body>
+
+<script>
+    function submit() {
+        data=document.getElementById("confirmationText1").value;
+        fetch("/post/data/here", {
+        method: "POST", 
+        body: JSON.stringify(data)
+        }).then(res => {
+        console.log("Request complete! response:", res);
+        });
+}
+</script>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <form id="myform" name="confirmationForm" method="post">
+    
+    <textarea id="confirmationText1" class="text" cols="86" rows ="20" name="confirmationText">your text here...
+    </textarea>
+
+    <div class="button" onclick="submit">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+    <textarea id="confirmationText2" class="text" cols="86" rows ="20" name="confirmationText">output
+    </textarea>
+
+   
+</form>
+  
+</body>
+</html>
