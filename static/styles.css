@@ -9,11 +9,13 @@ body {
 }
 
 .button {
+  position: absolute;
+  left: 615px;
+  top: 440px;
   border: 2px solid #d2bdff;
   height: 40px;
   width: 100px;
   border-radius: 4px;
-  position: relative;
   cursor: pointer;
   font-family: "Roboto", sans-serif;
   margin: 25px;
@@ -81,8 +83,8 @@ body {
 
 .text{
     width: 350px;height: 200px;
-                 padding: 10px; border:3px dashed indigo;
-                 background-color:aliceblue;
+                 padding: 10px; border:3px dashed rgba(170, 20, 240, 1);
+                 background-color:rgb(188, 140, 242,1);
                 
 }
 
@@ -92,3 +94,23 @@ body {
     margin-right: 30px;
 }
 
+
+#confirmationText1{
+    position: absolute;
+    left: 305px;
+    top: 200px;
+}
+
+#confirmationText2{
+    position: absolute;
+    left: 705px;
+    top: 200px;
+}
+
+#copyrights {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: rgb(255, 255, 255);
+  }
