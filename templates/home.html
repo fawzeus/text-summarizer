@@ -16,23 +16,38 @@
 </head>
 <body>
 
-<script>
-    function submit() {
-        data=document.getElementById("confirmationText1").value;
-        fetch("/post/data/here", {
-        method: "POST", 
-        body: JSON.stringify(data)
-        }).then(res => {
-        console.log("Request complete! response:", res);
-        });
+<script type="text/javascript">
+    
+
+    async function submit() {
+        
+            data=document.getElementById("confirmationText1").value;
+            console.logt(data);
+            const response = await fetch("localhost:8000", {
+            method: 'POST',
+            headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+            },
+            body: {
+            "data":data
+            },
+            });
+
+            response.json().then(data => {
+            console.log(data);
+            });  
 }
+
+
+
 </script>
   <form id="myform" name="confirmationForm" method="post">
     
     <textarea id="confirmationText1" class="text" cols="86" rows ="20" name="confirmationText">your text here...
     </textarea>
 
-    <div class="button" onclick="submit">
+    <div class="button" onclick="submit()">
         <span></span>
         <span></span>
         <span></span>

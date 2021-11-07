@@ -41,6 +41,7 @@ def calculate_sentences_score(docx,word_frequencies):
 
 def summerize(sentence_scores):
     select_length=int(len(sentence_scores.keys())*0.7)
+    select_length=max(select_length,2)
     summarized_sentences = nlargest(select_length, sentence_scores, key=sentence_scores.get)
     final_sentences = [ w.text for w in summarized_sentences ]
     summary = ' '.join(final_sentences)

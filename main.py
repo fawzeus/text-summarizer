@@ -1,10 +1,11 @@
-from fastapi import FastAPI,UploadFile,File,Request,Body
+from fastapi import FastAPI,Request
 import shutil
 from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
-from fastapi.responses import FileResponse
-from starlette.responses import StreamingResponse
+
+from fastapi.middleware.cors import CORSMiddleware
+
 import io
 import spacy
 from summerizer import calculate_sentences_score,calculate_word_frequency,summerize,normalize
@@ -13,9 +14,17 @@ from summerizer import calculate_sentences_score,calculate_word_frequency,summer
 app = FastAPI()
 nlp = spacy.load("en_core_web_sm")
 
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 templates=Jinja2Templates(directory="templates")
 app.mount("/static", StaticFiles(directory="static"), name="static")
-
 @app.get("/")
 def read_root(request:Request):
     return templates.TemplateResponse("home.html",{"request":request})
