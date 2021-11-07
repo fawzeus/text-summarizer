@@ -16,30 +16,7 @@
 </head>
 <body>
 
-<script type="text/javascript">
-    
-
-    async function submit() {
-        
-            data=document.getElementById("confirmationText1").value;
-            console.logt(data);
-            const response = await fetch("localhost:8000", {
-            method: 'POST',
-            headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-            },
-            body: {
-            "data":data
-            },
-            });
-
-            response.json().then(data => {
-            console.log(data);
-            });  
-}
-
-
+<script src="../static/app.js">
 
 </script>
   <form id="myform" name="confirmationForm" method="post">
@@ -48,10 +25,6 @@
     </textarea>
 
     <div class="button" onclick="submit()">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
       </div>
 
     <textarea id="confirmationText2" class="text" cols="86" rows ="20" name="confirmationText">output
