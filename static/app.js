@@ -2,7 +2,6 @@
 async function submit() {
 
     let msg=document.getElementById("confirmationText1").value;
-    alert("msg");
     let data = {"text": msg};
     let res = await (fetch("http://localhost:8000", {
     method: "POST",
