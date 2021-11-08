@@ -8,7 +8,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 import io
 import spacy
-from summerizer import calculate_sentences_score,calculate_word_frequency,summerize,normalize
+from summerizer import calculate_sentences_score,calculate_word_frequency,summerize,normalize,readingTime,reduced_by
 
 
 from typing import Optional
@@ -44,4 +44,8 @@ async def root(message:Message):
     words_freaquency=calculate_word_frequency(docx)
     normalize(words_freaquency)
     sentences_score=calculate_sentences_score(docx,words_freaquency)
-    return({"result":summerize(sentences_score)})
+    print("reading time befor sum",readingTime(docx))
+    summary=summerize(sentences_score)
+    docy=nlp(summary)
+    print("reading time befor sum",readingTime(docy))
+    return({"result":summary})
