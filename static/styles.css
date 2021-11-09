@@ -96,16 +96,18 @@ body {
 
 
 #confirmationText1{
+  position: absolute;
     left: 305px;
     top: 200px;
 }
 
 #confirmationText2{
+  position: absolute;
     left: 705px;
     top: 200px;
 }
 
-#copyrigphts {
+#copyrights {
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -114,6 +116,7 @@ body {
   }
 
   .site-logo {
+    position: absolute;
     left: 5px;
     top: 10px;
   }
