@@ -96,11 +96,13 @@ body {
 
 
 #confirmationText1{
+    position: absolute;
     left: 305px;
     top: 200px;
 }
 
 #confirmationText2{
+    position: absolute;
     left: 705px;
     top: 200px;
 }
@@ -114,10 +116,7 @@ body {
   }
 
   .site-logo {
+    position: absolute;
     left: 5px;
     top: 10px;
-  }
-
-  p{
-    color: rgb(255, 255, 255);
   }
