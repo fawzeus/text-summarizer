@@ -2,25 +2,21 @@
 <html lang="en">
 <head>
 
-  <link
-      href="{{ url_for('static', path='../static/styles.css') }}"
-      rel="stylesheet"
-    />
-  <link rel="shortcut icon" type="image/png" href="../static/logo.png">
-
-    
-    
+    <div class="site-logo">
+        <img src="../static/img1.png" alt="logo">
+      </div>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Summarizer</title>
+  <link
+      href="{{ url_for('static', path='../static/styles.css') }}"
+      rel="stylesheet"
+    />
 </head>
 <body>
 
 <script src="../static/app.js"></script>
-<div class="site-logo">
-  <img src="../static/img1.png" alt="logo">
-</div>
 
   <form id="myform" name="confirmationForm" method="post">
     
@@ -34,17 +30,14 @@
     </textarea>
 
 </form>
-
+<div id="stats">
+<p id="p1">before</p>
+<p id="p2">after</p>
+<p id="p3">reduced by</p>
+</div>
 <div id="copyrights">
     <p>&copy; Faouzi RJILI</p>
   </div>
-
-  <div id="stats">
-    <p >before</p>
-    <p >after</p>
-    <p >reduced by</p>
-  </div>
-
-
+  
 </body>
 </html>
