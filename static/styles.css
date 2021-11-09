@@ -96,13 +96,13 @@ body {
 
 
 #confirmationText1{
-    position: absolute;
+  position: absolute;
     left: 305px;
     top: 200px;
 }
 
 #confirmationText2{
-    position: absolute;
+  position: absolute;
     left: 705px;
     top: 200px;
 }
