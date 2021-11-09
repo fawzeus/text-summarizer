@@ -118,6 +118,13 @@ body {
     top: 10px;
   }
 
-  p{
+  #stats{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
     color: rgb(255, 255, 255);
   }
+
+
+  
