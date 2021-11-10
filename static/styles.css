@@ -1,11 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background: #060505;
+  background: rgb(0,0,0);
+  
+  min-block-size: 100%;
+  min-inline-size: 100%;
+  box-sizing: border-box;
+  display: grid;
+  place-content: center;
+  font-family: system-ui;
 }
 
 .button {
@@ -140,3 +143,10 @@ body {
     top: 20px;
     color: rgb(255, 0, 255);
   }
+
+  article {
+    font-size: 3vmin;
+    line-height: 1.1;
+    font-family: "Dank Mono", ui-monospace, monospace;
+  }
+  
