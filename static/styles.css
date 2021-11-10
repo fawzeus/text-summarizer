@@ -126,3 +126,10 @@ body {
     top: 200px;
     color: rgb(255, 0, 255);
   }
+
+  #afterp{
+    position: absolute;
+    left: 1150px;
+    top: 200px;
+    color: rgb(255, 0, 255);
+  }
