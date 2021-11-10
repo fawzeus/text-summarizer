@@ -133,3 +133,10 @@ body {
     top: 200px;
     color: rgb(255, 0, 255);
   }
+
+  #reducedp{
+    position: absolute;
+    left: 600px;
+    top: 20px;
+    color: rgb(255, 0, 255);
+  }

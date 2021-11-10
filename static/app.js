@@ -13,6 +13,7 @@ async function submit() {
   document.getElementById("confirmationText2").value=resul.result;
   document.getElementById("beforep").innerHTML=resul.before;
   document.getElementById("afterp").innerHTML=resul.after;
+  document.getElementById("reducedp").innerHTML=resul.reduced;
 
 
 }

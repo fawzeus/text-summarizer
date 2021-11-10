@@ -54,4 +54,4 @@ def readingTime(docx):
     return '{} mins of reading'.format(round(estimatedtime))
 
 def reduced_by(text,summary):
-    return (len(text)-len(summary))/len(text)*100
+    return 'reduced by {} %'.format(round((len(text)-len(summary))/len(text)*100))

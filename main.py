@@ -48,5 +48,5 @@ async def root(message:Message):
     summary=summerize(sentences_score)
     docy=nlp(summary)
     #print("reading time befor sum",readingTime(docy))
-
-    return({"result":summary,"before":readingTime(docx),"after":readingTime(docy)})
+    reduce=reduced_by(message.text,summary)
+    return({"result":summary,"before":readingTime(docx),"after":readingTime(docy),"reduced":reduce})
