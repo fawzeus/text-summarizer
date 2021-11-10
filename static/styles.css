@@ -120,3 +120,9 @@ body {
     left: 5px;
     top: 10px;
   }
+  #beforep{
+    position: absolute;
+    left: 75px;
+    top: 200px;
+    color: rgb(255, 0, 255);
+  }

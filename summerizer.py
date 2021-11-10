@@ -51,7 +51,7 @@ def summerize(sentence_scores):
 def readingTime(docx):
     total_words_tokens =  [ token.text for token in docx]
     estimatedtime  = len(total_words_tokens)/200
-    return '{} mins'.format(round(estimatedtime))
+    return '{} mins of reading'.format(round(estimatedtime))
 
 def reduced_by(text,summary):
     return (len(text)-len(summary))/len(text)*100

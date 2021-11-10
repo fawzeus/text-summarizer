@@ -11,7 +11,7 @@ async function submit() {
   }))
   let resul=await res.json();
   document.getElementById("confirmationText2").value=resul.result;
-
+  document.getElementById("beforep").innerHTML=resul.before;
 
 
 }
